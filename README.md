@@ -1,4 +1,4 @@
-# ɪreːn 🌊: Interdisciplinary Research for Emerging Natural-languages
+# ɪreːn 🌊: Interdisciplinary Research on Ethical & Equitable NLP for under-resourced Languages
 
 Website for the ɪreːn research collaboration.
 
