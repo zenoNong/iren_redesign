@@ -605,6 +605,45 @@ function initGallery() {
     });
 }
 
+// Show the group name in a font that has the IPA letters ɪ and ː.
+const groupName = 'ɪreːn';
+
+function markGroupName(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+            if (!node.nodeValue.includes(groupName)) {
+                return NodeFilter.FILTER_REJECT;
+            }
+            const parent = node.parentElement;
+            if (!parent || parent.closest('script, style, textarea, title, .iren-name')) {
+                return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+        },
+    });
+
+    const nodes = [];
+    while (walker.nextNode()) {
+        nodes.push(walker.currentNode);
+    }
+
+    nodes.forEach((node) => {
+        const fragment = document.createDocumentFragment();
+        node.nodeValue.split(groupName).forEach((part, index) => {
+            if (index > 0) {
+                const span = document.createElement('span');
+                span.className = 'iren-name';
+                span.textContent = groupName;
+                fragment.appendChild(span);
+            }
+            if (part) {
+                fragment.appendChild(document.createTextNode(part));
+            }
+        });
+        node.parentNode.replaceChild(fragment, node);
+    });
+}
+
 function markSiteReady() {
     document.body.classList.remove('site-loading');
     document.body.classList.add('site-ready');
@@ -630,6 +669,7 @@ window.addEventListener('DOMContentLoaded', event => {
         })
         .then(() => renderContactForm(window.siteConfig || {}))
         .then(() => { initStrip(); initGallery(); })
+        .then(() => markGroupName(document.body))
         .then(() => typesetMath())
         .catch(error => console.log(error))
         .finally(() => markSiteReady());

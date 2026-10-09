@@ -1,11 +1,11 @@
 # ------------------------------------------------------------------
 # Site settings. Each section's text lives in contents/<id>.md
 # ------------------------------------------------------------------
-title: IREN 🌊 | Interdisciplinary Research for Emerging Natural-languages
-page-top-title: IREN 🌊
+title: ɪreːn 🌊 | Interdisciplinary Research for Emerging Natural-languages
+page-top-title: ɪreːn 🌊
 
 # Hero banner
-top-section-bg-text: IREN 🌊
+top-section-bg-text: ɪreːn 🌊
 top-section-tagline: Interdisciplinary Research for Emerging Natural-languages
 backgrounds:
   - static/assets/background/iren-bondi-beach.jpg
@@ -17,13 +17,13 @@ background-credit: 'Photo Credit: Hoomexsun Pangsatabam, Bondi Beach, Australia'
 # Contact form: messages are delivered to this address by FormSubmit (formsubmit.co).
 # The first message sends an activation email to this address; click the link in it once.
 contact-form-email: huidromrudali@gmail.com
-contact-form-subject: New message from the IREN website
+contact-form-subject: New message from the ɪreːn website
 
 # Project logo shown under the banner (set to '' to hide)
 logo: static/assets/img/logo.svg
 
 # Footer
-copyright-text: '&copy; 2026 IREN 🌊 collaboration'
+copyright-text: '&copy; 2026 ɪreːn 🌊 collaboration'
 github-link:
   text: GitHub
   href: https://github.com/your-org/your-repo
@@ -36,7 +36,7 @@ license-link:
 sections:
   - id: home
     nav: About
-    title: About IREN
+    title: About ɪreːn
     href: '#page-top'
   - id: news
     nav: News

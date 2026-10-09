@@ -1,6 +1,6 @@
-# IREN 🌊: Interdisciplinary Research for Emerging Natural-languages
+# ɪreːn 🌊: Interdisciplinary Research for Emerging Natural-languages
 
-Website for the IREN research collaboration.
+Website for the ɪreːn research collaboration.
 
 A static GitHub Pages site for a research collaboration. It is adapted from
 [senli1073/academic-homepage-template](https://github.com/senli1073/academic-homepage-template)
@@ -65,3 +65,4 @@ Then visit http://localhost:8000.
 ## Credits
 
 Banner photo: Hoomexsun Pangsatabam, Bondi Beach, Australia.
+Group name font: [Inter](https://github.com/rsms/inter) (SIL Open Font License 1.1), reduced to the letters of ɪreːn in `static/assets/fonts/`. The site's other fonts lack the IPA letters ɪ and ː; `static/js/scripts.js` wraps each mention of the name so it uses this font.

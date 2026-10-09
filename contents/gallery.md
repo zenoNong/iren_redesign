@@ -4,11 +4,11 @@
   Keep photos under ~1400 px on the long side. Captions are optional.
 -->
 
-Research is better with good food and good company. A few moments from IREN get-togethers.
+Research is better with good food and good company. A few moments from ɪreːn get-togethers.
 
 <div class="gallery">
 <figure class="slide">
-<img src="static/assets/img/gallery/get-together-1.jpg" width="1280" height="960" alt="Two IREN members smiling and making peace signs at a table of food beneath the Chak-Khum restaurant sign">
+<img src="static/assets/img/gallery/get-together-1.jpg" width="1280" height="960" alt="Two ɪreːn members smiling and making peace signs at a table of food beneath the Chak-Khum restaurant sign">
 <figcaption>At Chak-Khum</figcaption>
 </figure>
 <figure class="slide">
@@ -16,7 +16,7 @@ Research is better with good food and good company. A few moments from IREN get-
 <figcaption>Lunch is served</figcaption>
 </figure>
 <figure class="slide">
-<img src="static/assets/img/gallery/get-together-4.jpg" width="1280" height="720" alt="Five IREN members gathered around a dinner table, one taking a selfie in the foreground">
+<img src="static/assets/img/gallery/get-together-4.jpg" width="1280" height="720" alt="Five ɪreːn members gathered around a dinner table, one taking a selfie in the foreground">
 <figcaption>The whole table</figcaption>
 </figure>
 <figure class="slide">

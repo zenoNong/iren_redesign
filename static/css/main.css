@@ -806,3 +806,17 @@ body.lightbox-open {
 .institution h4 + h5.subgroup {
     margin-top: 0.9rem;
 }
+
+/* Group name ɪreːn: the site fonts lack ɪ and ː, so the name uses Inter.
+   iren-name.woff contains only these letters (Inter, SIL OFL 1.1, see Inter-OFL.txt). */
+@font-face {
+    font-family: "Iren Name";
+    src: url("../assets/fonts/iren-name.woff") format("woff");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+.iren-name {
+    font-family: "Iren Name", "Inter", "Noto Sans", "Segoe UI", sans-serif;
+}
