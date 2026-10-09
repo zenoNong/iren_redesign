@@ -1,0 +1,73 @@
+# ------------------------------------------------------------------
+# Site settings. Each section's text lives in contents/<id>.md
+# ------------------------------------------------------------------
+title: IREN 🌊 | Interdisciplinary Research for Emerging Natural-languages
+page-top-title: IREN 🌊
+
+# Hero banner
+top-section-bg-text: IREN 🌊
+top-section-tagline: Interdisciplinary Research for Emerging Natural-languages
+backgrounds:
+  - static/assets/background/iren-bondi-beach.jpg
+background-interval-ms: 7000
+background-overlay: 0.35
+background-credit: 'Photo Credit: Hoomexsun Pangsatabam, Bondi Beach, Australia'
+
+
+# Contact form: messages are delivered to this address by FormSubmit (formsubmit.co).
+# The first message sends an activation email to this address; click the link in it once.
+contact-form-email: huidromrudali@gmail.com
+contact-form-subject: New message from the IREN website
+
+# Project logo shown under the banner (set to '' to hide)
+logo: static/assets/img/logo.svg
+
+# Footer
+copyright-text: '&copy; 2026 IREN 🌊 collaboration'
+github-link:
+  text: GitHub
+  href: https://github.com/your-org/your-repo
+license-link:
+  text: License
+  href: https://github.com/your-org/your-repo/blob/main/LICENSE
+
+# Sections, in page order. Delete an entry to hide that section.
+# Icons: https://icons.getbootstrap.com/
+sections:
+  - id: home
+    nav: About
+    title: About IREN
+    href: '#page-top'
+  - id: news
+    nav: News
+    title: News and events
+    icon: bi-megaphone-fill
+  - id: objectives
+    nav: Objectives
+    title: Aim and objectives
+    icon: bi-bullseye
+  - id: collaborators
+    nav: Collaborators
+    title: Collaborators
+    icon: bi-people-fill
+  - id: publications
+    nav: Publications
+    title: Publications
+    icon: bi-file-text-fill
+  - id: tools
+    nav: Tools
+    title: Tools
+    icon: bi-tools
+  - id: gallery
+    nav: Gallery
+    title: Get-togethers
+    icon: bi-camera-fill
+  - id: contact
+    nav: Contact
+    title: Contact us
+    icon: bi-envelope-fill
+  # Uncomment to show contents/funding.md
+  # - id: funding
+  #   nav: Funding
+  #   title: Funding and acknowledgements
+  #   icon: bi-bank2
