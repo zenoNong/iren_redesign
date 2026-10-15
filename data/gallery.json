@@ -1,0 +1,90 @@
+[
+  {
+    "id": "gallery-chak-khum",
+    "src": "static/assets/img/gallery/get-together-1.jpg",
+    "title": "At Chak-Khum",
+    "caption": "Rudali and team celebrating milestones over traditional Manipuri cuisine at Chak-Khum restaurant.",
+    "location": "Imphal, Manipur",
+    "date": "October 2026",
+    "alt": "Two ɪreːn members smiling and making peace signs at a table of food beneath the Chak-Khum restaurant sign",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "id": "gallery-lunch",
+    "src": "static/assets/img/gallery/get-together-2.jpg",
+    "title": "Lunch is Served",
+    "caption": "Traditional indigenous plates of seasonal greens, aromatic herbs, and shared indigenous thali recipes.",
+    "location": "Bishnupur, Manipur",
+    "date": "October 2026",
+    "alt": "Plates of rice, greens and side dishes shared at the table",
+    "width": 960,
+    "height": 1280
+  },
+  {
+    "id": "gallery-whole-table",
+    "src": "static/assets/img/gallery/get-together-4.jpg",
+    "title": "The Whole Table",
+    "caption": "ɪreːn core research collaborators gathered together after a fruitful multi-day NLP evaluation workshop.",
+    "location": "Guwahati, Assam",
+    "date": "August 2026",
+    "alt": "Five ɪreːn members gathered around a dinner table, one taking a selfie in the foreground",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "id": "gallery-korean-dinner",
+    "src": "static/assets/img/gallery/get-together-3.jpg",
+    "title": "Korean Hotpot Gathering",
+    "caption": "An evening celebration with a boiling table hotpot following our WMT 2026 system paper submission.",
+    "location": "Bangalore, India",
+    "date": "June 2026",
+    "alt": "A table of Korean dishes with a bubbling pot in the centre",
+    "width": 720,
+    "height": 1280
+  },
+  {
+    "id": "gallery-wmt-dinner",
+    "src": "static/assets/img/gallery/wmt-dinner.jpg",
+    "title": "WMT 2026 Conference Dinner",
+    "caption": "Team PANINI members celebrating our top ranking at the Low-Resource Indic Language Translation task.",
+    "location": "Budapest, Hungary",
+    "date": "October 2026",
+    "alt": "ɪreːn researchers celebrating presentation at WMT 2026 in Budapest",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "id": "gallery-campus-meetup",
+    "src": "static/assets/img/gallery/campus-meetup.jpg",
+    "title": "Campus Research Meetup",
+    "caption": "Linguistics and computer science fellows coordinating the cross-script acoustic speech data collection.",
+    "location": "IIT Guwahati Campus",
+    "date": "July 2026",
+    "alt": "Collaborating researchers discussing speech data manifests on campus",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "id": "gallery-fieldwork-lunch",
+    "src": "static/assets/img/gallery/fieldwork-lunch.jpg",
+    "title": "Fieldwork Expedition Feast",
+    "caption": "Shared community meal during dialect survey and native speaker interviews in rural Manipur.",
+    "location": "Moirang, Manipur",
+    "date": "March 2025",
+    "alt": "Traditional feast prepared during fieldwork elicitation drive",
+    "width": 960,
+    "height": 1280
+  },
+  {
+    "id": "gallery-closing-dinner",
+    "src": "static/assets/img/gallery/closing-dinner.jpg",
+    "title": "Symposium Closing Dinner",
+    "caption": "Winding down an intensive sprint on transliteration benchmark evaluation with project advisors.",
+    "location": "Imphal, Manipur",
+    "date": "December 2024",
+    "alt": "Evening banquet marking the completion of the annual speech alignment benchmark",
+    "width": 720,
+    "height": 1280
+  }
+]

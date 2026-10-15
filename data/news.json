@@ -1,0 +1,158 @@
+[
+  {
+    "id": "news-2026-10-wmt",
+    "date": "2026-10",
+    "dateFormatted": "October 2026",
+    "category": "Conferences",
+    "badge": "WMT 2026",
+    "title": "Two papers presented at WMT 2026 (EMNLP co-located)",
+    "summary": "ɪreːn presents two papers at the Eleventh Conference on Machine Translation (WMT 2026) in Budapest, co-located with EMNLP 2026: one on PANINI rsLoRA dual-script translation and one on cross-script meta-evaluation.",
+    "link": {
+      "label": "Proceedings",
+      "url": "https://www2.statmt.org/wmt26/pdf/2026.wmt-1.154.pdf"
+    }
+  },
+  {
+    "id": "news-2026-10-launch",
+    "date": "2026-10",
+    "dateFormatted": "October 2026",
+    "category": "Announcements",
+    "badge": "Milestone",
+    "title": "Official ɪreːn Research Collaboration Platform Launched",
+    "summary": "The official web platform and open-science portal for the ɪreːn research initiative is live, consolidating datasets, benchmarks, field tools, and published papers for low-resource languages.",
+    "link": {
+      "label": "Read Mission",
+      "url": "#research"
+    }
+  },
+  {
+    "id": "news-2026-09-aura",
+    "date": "2026-09",
+    "dateFormatted": "September 2026",
+    "category": "Conferences",
+    "badge": "AACL 2026",
+    "title": "Aura System Demonstration Accepted at AACL-IJCNLP 2026",
+    "summary": "Aura: A Self-Hostable Platform for Human Evaluation of NLG for Under-resourced Languages accepted at the 2026 System Demonstration Track. Interactive trials will be demonstrated live.",
+    "link": {
+      "label": "Try Aura",
+      "url": "https://www.aura4lrl.studio"
+    }
+  },
+  {
+    "id": "news-2026-09-metric",
+    "date": "2026-09",
+    "dateFormatted": "September 2026",
+    "category": "Conferences",
+    "badge": "Research Track",
+    "title": "Which Metric for Which Script? Accepted at WMT 2026 Research Track",
+    "summary": "Our quantified meta-evaluation evaluating BLEU, chrF++, and LLM-as-a-judge rankings against calibrated human ratings across Meitei Mayek and Bengali scripts accepted in the main WMT research track.",
+    "link": {
+      "label": "Paper PDF",
+      "url": "https://www2.statmt.org/wmt26/pdf/2026.wmt-1.17.pdf"
+    }
+  },
+  {
+    "id": "news-2026-06-panini",
+    "date": "2026-06",
+    "dateFormatted": "June 2026",
+    "category": "Conferences",
+    "badge": "Shared Task",
+    "title": "Team PANINI Ranked Top in WMT 2026 Low-Resource Indic Shared Task",
+    "summary": "Our submission ranked among the top translation models on English ↔ Manipuri translation in both native scripts using rsLoRA parameter-efficient fine-tuning and three-stream data synthesis.",
+    "link": {
+      "label": "GitHub Repo",
+      "url": "https://github.com/RHuidrom96/WMT-2026-Team-PANINI"
+    }
+  },
+  {
+    "id": "news-2026-04-scriba",
+    "date": "2026-04",
+    "dateFormatted": "April 2026",
+    "category": "Releases",
+    "badge": "Software v1.0",
+    "title": "Scriba Toolkit v1.0 Released for Field Linguistics Audio Elicitation",
+    "summary": "First public release of Scriba, an offline-first desktop tool enabling field linguists to record, segment, time-align, and transcribe acoustic speech in non-Latin writing systems without cloud dependencies.",
+    "link": {
+      "label": "Explore Scriba",
+      "url": "#tools"
+    }
+  },
+  {
+    "id": "news-2026-02-speech-corpus",
+    "date": "2026-02",
+    "dateFormatted": "February 2026",
+    "category": "Releases",
+    "badge": "Open Dataset",
+    "title": "Manipuri Multi-Speaker Speech Corpus Released on Hugging Face",
+    "summary": "Released over 25 hours of multi-speaker read speech recordings with dual-script alignments (Meitei Mayek and Bengali script) along with phoneme boundaries on the Hugging Face Hub.",
+    "link": {
+      "label": "Dataset Hub",
+      "url": "https://huggingface.co/datasets/iren"
+    }
+  },
+  {
+    "id": "news-2025-11-indic-eval",
+    "date": "2025-11",
+    "dateFormatted": "November 2025",
+    "category": "Releases",
+    "badge": "Python SDK",
+    "title": "IndicEval Benchmark Suite Published on PyPI",
+    "summary": "Released indic-eval Python package on PyPI, offering standardized metric pipelines for evaluating script-transliterated and agglutinative low-resource South Asian language translations.",
+    "link": {
+      "label": "PyPI Package",
+      "url": "#tools"
+    }
+  },
+  {
+    "id": "news-2025-08-coling",
+    "date": "2025-08",
+    "dateFormatted": "August 2025",
+    "category": "Conferences",
+    "badge": "COLING 2025",
+    "title": "Dual-Script Alignment Paper Accepted at LREC-COLING 2025",
+    "summary": "Our comprehensive study on acoustic phoneme alignment and phonetic drift across orthographic shifts accepted at Language Resources and Evaluation Conference (LREC-COLING 2025).",
+    "link": {
+      "label": "Read Abstract",
+      "url": "#publications"
+    }
+  },
+  {
+    "id": "news-2025-05-keynote",
+    "date": "2025-05",
+    "dateFormatted": "May 2025",
+    "category": "Talks",
+    "badge": "Keynote",
+    "title": "Keynote at Northeast Language Technology Forum",
+    "summary": "Rudali Huidrom delivered an invited keynote on 'Building Language Technology by and for Speaker Communities' at the regional NLP and Speech Symposium in Guwahati, Assam.",
+    "link": {
+      "label": "Conference Link",
+      "url": "#"
+    }
+  },
+  {
+    "id": "news-2025-03-fieldwork",
+    "date": "2025-03",
+    "dateFormatted": "March 2025",
+    "category": "Talks",
+    "badge": "Fieldwork",
+    "title": "Linguistic Fieldwork Expedition in Imphal & Bishnupur",
+    "summary": "Team members conducted an in-depth 3-week field elicitation drive with 30 native speakers, archiving dialectal phonetic variations and historical oral narratives across rural Manipur.",
+    "link": {
+      "label": "View Gallery",
+      "url": "#gallery"
+    }
+  },
+  {
+    "id": "news-2024-12-cnrs",
+    "date": "2024-12",
+    "dateFormatted": "December 2024",
+    "category": "Announcements",
+    "badge": "Grant Award",
+    "title": "CNRS-GETALP & Collaborating Labs Joint Research Grant Awarded",
+    "summary": "Awarded bilateral research funding supporting multi-institution collaboration between CNRS LIG GETALP (Grenoble, France) and Indian institutes to study extreme low-resource speech technologies.",
+    "link": {
+      "label": "Details",
+      "url": "#join"
+    }
+  }
+]
