@@ -288,42 +288,7 @@
 
     const aboutCoalition = document.getElementById("about-coalition");
     if (aboutCoalition && data.about && data.about.coalition) {
-      const textElem = aboutCoalition.querySelector(".coalition-text");
-      if (textElem) {
-        textElem.innerHTML = `<strong><span class="iren-name">ɪreːn</span></strong> ${data.about.coalition.replace(/^ɪreːn\s*/, "")}`;
-      }
-    }
-
-    const missionBlock = document.getElementById("mission-quote");
-    if (missionBlock && data.mission && data.mission.quote) {
-      missionBlock.textContent = data.mission.quote;
-    }
-
-    // Render Foundational Tenets (Icon-free academic ledger)
-    const pillarsContainer = document.getElementById("pillars-container");
-    if (pillarsContainer && data.pillars) {
-      pillarsContainer.replaceChildren();
-
-      const romanNumerals = ["I", "II", "III"];
-      const tenetScopes = [
-        "Linguistics · Machine Learning · Speech Science",
-        "Speaker Sovereignty · Collaborative Co-Design",
-        "Public Benchmarks · Permissive Licensing · Open AI"
-      ];
-
-      data.pillars.forEach((p, idx) => {
-        const item = document.createElement("article");
-        item.className = "tenet-item";
-        item.innerHTML = `
-          <div class="tenet-header">
-            <span class="tenet-roman">${romanNumerals[idx] || "0" + (idx + 1)}</span>
-            <span class="tenet-scope">${tenetScopes[idx] || ""}</span>
-          </div>
-          <h3 class="tenet-title">${p.title}</h3>
-          <p class="tenet-desc">${p.description}</p>
-        `;
-        pillarsContainer.appendChild(item);
-      });
+      aboutCoalition.innerHTML = `<strong><span class="iren-name">ɪreːn</span></strong> ${data.about.coalition.replace(/^ɪreːn\s*/, "")}`;
     }
 
     // Render Research Domains (Scholarly Dossier Cards — Icon-Free)
