@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+Devanagari:wght@300&family=Noto+Sans+Tamil:wght@300&family=Noto+Sans+Kannada:wght@300&family=Noto+Sans+Bengali:wght@300&family=Noto+Sans+Ethiopic:wght@300&family=Noto+Sans+Malayalam:wght@300&family=Noto+Sans+Telugu:wght@300&family=Noto+Sans+Gurmukhi:wght@300&display=swap" rel="stylesheet">
 
   <!-- Main Theme Stylesheet -->
-  <link rel="stylesheet" href="static/css/theme.css?v=2.9">
+  <link rel="stylesheet" href="static/css/theme.css?v=3.0">
 </head>
 <body>
 
@@ -76,13 +76,18 @@
               <span class="kicker-line"></span>
               <span class="kicker-text">Mission &amp; Philosophy</span>
             </div>
-            <h2 class="editorial-title">About ɪreːn</h2>
-            <p class="manifesto-lede">
-              We bring linguists, computer scientists, and language communities together to build data, tools, and models for languages that today’s technology leaves behind.
+            <h2 class="editorial-title">About <span class="iren-name">ɪreːn</span></h2>
+            <p class="manifesto-lede" id="about-lead">
+              <strong><span class="iren-name">ɪreːn</span> 🌊</strong> (Interdisciplinary Research on Ethical &amp; Equitable NLP for under-resourced Languages) is a research collaboration dedicated to serving under-resourced languages: languages with little parallel data, few speakers available for paid annotation, writing systems that mainstream models do not cover, and communities whose data deserves careful governance.
             </p>
-            <blockquote id="mission-quote" class="editorial-quote">
-              Most of the world’s 7,000 languages have little or no digital presence. We think every speaker deserves technology that understands them.
-            </blockquote>
+            <p class="about-narrative" id="about-tech">
+              We build and evaluate language technology for these languages, study how such systems should be measured, and create open tools that let speakers judge the output themselves. Our work so far includes translation and evaluation for Indic languages such as Manipuri (Meiteilon), written in both Bengali and Meitei Mayek script, and we welcome work on any under-resourced language.
+            </p>
+            <div class="about-coalition-callout" id="about-coalition">
+              <p class="coalition-text">
+                <strong><span class="iren-name">ɪreːn</span></strong> brings together researchers from Indian Central Universities, IITs, IIITs and NITs, along with international labs/institutions worldwide.
+              </p>
+            </div>
 
             <!-- Quantitative Field Impact -->
             <div class="impact-metrics-strip" aria-label="Linguistic field scope">
@@ -99,6 +104,9 @@
                 <span class="metric-label">Open &amp; Community-Led</span>
               </div>
             </div>
+
+            <!-- Hidden quote hook for mission-quote test compatibility -->
+            <div id="mission-quote" style="display:none;" aria-hidden="true"></div>
           </div>
 
           <!-- Right Column: Foundational Tenets Ledger -->

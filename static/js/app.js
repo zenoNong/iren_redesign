@@ -275,8 +275,27 @@
     const data = await fetchJSON("data/research.json");
     if (!data) return;
 
+    // Hydrate About Section narrative from data/research.json
+    const aboutLead = document.getElementById("about-lead");
+    if (aboutLead && data.about && data.about.lead) {
+      aboutLead.innerHTML = data.about.lead;
+    }
+
+    const aboutTech = document.getElementById("about-tech");
+    if (aboutTech && data.about && data.about.technology) {
+      aboutTech.innerHTML = data.about.technology;
+    }
+
+    const aboutCoalition = document.getElementById("about-coalition");
+    if (aboutCoalition && data.about && data.about.coalition) {
+      const textElem = aboutCoalition.querySelector(".coalition-text");
+      if (textElem) {
+        textElem.innerHTML = `<strong><span class="iren-name">ɪreːn</span></strong> ${data.about.coalition.replace(/^ɪreːn\s*/, "")}`;
+      }
+    }
+
     const missionBlock = document.getElementById("mission-quote");
-    if (missionBlock && data.mission) {
+    if (missionBlock && data.mission && data.mission.quote) {
       missionBlock.textContent = data.mission.quote;
     }
 
