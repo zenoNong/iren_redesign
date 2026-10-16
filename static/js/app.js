@@ -703,26 +703,32 @@
     // Only include categories that exist in data and have count > 0
     const availableCategories = Object.keys(categoryCounts).filter(c => categoryCounts[c] > 0);
 
-    // Build filter capsule bar dynamically
+    // Build filter capsule bar dynamically (only show if multiple categories exist)
     if (filterContainer) {
-      const allBtn = `<button type="button" class="tool-filter-btn ${currentCategory === "all" ? "active" : ""}" data-category="all">All (${tools.length})</button>`;
-      const catBtns = availableCategories.map(cat => {
-        const count = categoryCounts[cat];
-        const isActive = cat === currentCategory ? "active" : "";
-        return `<button type="button" class="tool-filter-btn ${isActive}" data-category="${cat}">${cat} (${count})</button>`;
-      }).join("");
+      if (availableCategories.length <= 1) {
+        filterContainer.style.display = "none";
+        filterContainer.replaceChildren();
+      } else {
+        filterContainer.style.display = "inline-flex";
+        const allBtn = `<button type="button" class="tool-filter-btn ${currentCategory === "all" ? "active" : ""}" data-category="all">All (${tools.length})</button>`;
+        const catBtns = availableCategories.map(cat => {
+          const count = categoryCounts[cat];
+          const isActive = cat === currentCategory ? "active" : "";
+          return `<button type="button" class="tool-filter-btn ${isActive}" data-category="${cat}">${cat} (${count})</button>`;
+        }).join("");
 
-      filterContainer.innerHTML = allBtn + catBtns;
+        filterContainer.innerHTML = allBtn + catBtns;
 
-      filterContainer.querySelectorAll(".tool-filter-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          filterContainer.querySelectorAll(".tool-filter-btn").forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-          currentCategory = btn.getAttribute("data-category");
-          currentPage = 1;
-          updateToolsView();
+        filterContainer.querySelectorAll(".tool-filter-btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            filterContainer.querySelectorAll(".tool-filter-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            currentCategory = btn.getAttribute("data-category");
+            currentPage = 1;
+            updateToolsView();
+          });
         });
-      });
+      }
     }
 
     function createToolCard(tool) {
@@ -768,9 +774,9 @@
       const totalPages = Math.ceil(totalItems / TOOLS_PER_PAGE);
 
       if (totalPages <= 1) {
-        if (totalItems > 0) {
+        if (totalItems > 1) {
           pageWrapper.innerHTML = `
-            <div class="tools-pagination-info">Showing all ${totalItems} tool${totalItems === 1 ? '' : 's'}</div>
+            <div class="tools-pagination-info">Showing all ${totalItems} tools</div>
           `;
         } else {
           pageWrapper.replaceChildren();

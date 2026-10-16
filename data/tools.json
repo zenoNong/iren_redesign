@@ -4,142 +4,14 @@
     "name": "Aura",
     "tagline": "Platform for Human Evaluation of NLG",
     "category": "Platforms",
-    "status": "Live Platform · v1.4",
+    "status": "Open Platform",
     "icon": "sliders",
-    "description": "An open, self-hostable platform for human evaluation of natural language generation, built for under-resourced languages. Runs five evaluation protocols (Likert, pairwise, ranking, error-span, post-editing) with script and speaker provenance, offline capability, and LLM assistant tracking.",
+    "description": "An open, self-hostable platform for human evaluation of natural language generation, built for under-resourced languages. It runs five evaluation protocols in one place (Likert/direct assessment, pairwise, ranking, error-span and post-editing), records script and speaker provenance, works fully offline, and can offer annotators an LLM assistant whose effect is logged.",
     "tags": ["NLG Evaluation", "Human-in-the-Loop", "Offline-Ready", "Multi-Protocol"],
     "links": [
       { "label": "Try Aura", "url": "https://www.aura4lrl.studio", "primary": true },
-      { "label": "Watch Demo", "url": "https://youtu.be/NDtqi_Rch2I", "primary": false },
-      { "label": "GitHub", "url": "https://github.com/RHuidrom96/aura", "primary": false }
-    ]
-  },
-  {
-    "id": "panini-nmt",
-    "name": "PANINI Engine",
-    "tagline": "Dual-Script Translation Models",
-    "category": "Models & APIs",
-    "status": "Hugging Face Model",
-    "icon": "translate",
-    "description": "Specialized neural machine translation checkpoints for low-resource Indic language pairs (English ↔ Manipuri in both Bengali and Meitei Mayek scripts) trained via rank-stabilized LoRA (rsLoRA) and three-stream self-augmentation.",
-    "tags": ["Machine Translation", "rsLoRA", "Dual-Script", "IndicNLP"],
-    "links": [
-      { "label": "Hugging Face", "url": "https://huggingface.co/models", "primary": true },
-      { "label": "GitHub Code", "url": "https://github.com/RHuidrom96/WMT-2026-Team-PANINI", "primary": false },
-      { "label": "WMT Paper", "url": "https://www2.statmt.org/wmt26/pdf/2026.wmt-1.154.pdf", "primary": false }
-    ]
-  },
-  {
-    "id": "scriba",
-    "name": "Scriba Toolkit",
-    "tagline": "Offline Fieldwork Audio & Elicitation",
-    "category": "Annotation",
-    "status": "Open Source App",
-    "icon": "mic",
-    "description": "An offline-first desktop and tablet application designed for field linguists and speaker communities. Features synchronized audio elicitation, phonetic time-aligned segmentation, and native writing-system transcription without internet connection.",
-    "tags": ["Audio Elicitation", "Field Linguistics", "Time-Aligned", "Offline-First"],
-    "links": [
-      { "label": "Explore Scriba", "url": "#", "primary": true },
-      { "label": "GitHub Repo", "url": "#", "primary": false },
-      { "label": "Documentation", "url": "#", "primary": false }
-    ]
-  },
-  {
-    "id": "indiceval",
-    "name": "IndicEval Suite",
-    "tagline": "Cross-Script Meta-Evaluation Suite",
-    "category": "Evaluation",
-    "status": "Python SDK · PyPI",
-    "icon": "chart",
-    "description": "A Python evaluation package and benchmark suite measuring automated metric reliability (BLEU, chrF++, COMET) against calibrated human and LLM judges across diverse writing systems and script topologies.",
-    "tags": ["Meta-Evaluation", "Benchmarking", "LLM Judges", "Python SDK"],
-    "links": [
-      { "label": "PyPI Package", "url": "#", "primary": true },
-      { "label": "GitHub Suite", "url": "https://github.com/RHuidrom96/which-metric-which-script", "primary": false }
-    ]
-  },
-  {
-    "id": "meitei-align",
-    "name": "Meitei-Align",
-    "tagline": "Phonetic & Script Transliteration",
-    "category": "Models & APIs",
-    "status": "CLI & Web Tool",
-    "icon": "code",
-    "description": "A rule-based and neural transliterator ensuring lossless bi-directional conversion between historical Meitei Mayek glyphs and contemporary Bengali script conventions, correctly resolving complex virama ligatures and tonemarks.",
-    "tags": ["Transliteration", "Orthography", "Meitei Mayek", "Unicode Tools"],
-    "links": [
-      { "label": "Web Demo", "url": "#", "primary": true },
-      { "label": "CLI Tool", "url": "#", "primary": false }
-    ]
-  },
-  {
-    "id": "speech-pipeline",
-    "name": "Speech Corpus Pipeline",
-    "tagline": "Audio Preprocessing & Alignment",
-    "category": "Annotation",
-    "status": "Data Pipeline",
-    "icon": "waveform",
-    "description": "End-to-end pipeline for cleaning, noise suppression, and forced alignment of field-recorded indigenous speech archives. Produces manifests ready for Kaldi, Whisper fine-tuning, and Hugging Face Datasets.",
-    "tags": ["Speech Processing", "Forced Alignment", "ASR Prep", "Audio Cleaning"],
-    "links": [
-      { "label": "Pipeline Code", "url": "#", "primary": true },
-      { "label": "Dataset Hub", "url": "https://huggingface.co/datasets/iren", "primary": false }
-    ]
-  },
-  {
-    "id": "bodo-bert",
-    "name": "Bodo-BERT",
-    "tagline": "Tibeto-Burman Transformer Models",
-    "category": "Models & APIs",
-    "status": "Hugging Face Model",
-    "icon": "code",
-    "description": "Pre-trained RoBERTa and DeBERTa encoders adapted via continuous masked language modeling for Bodo and related Tibeto-Burman varieties, demonstrating state-of-the-art token classification and POS tagging.",
-    "tags": ["Transformers", "Tibeto-Burman", "Language Model", "POS Tagging"],
-    "links": [
-      { "label": "Model Weights", "url": "https://huggingface.co/models", "primary": true },
-      { "label": "Paper Checkpoint", "url": "#", "primary": false }
-    ]
-  },
-  {
-    "id": "lexifield-mobile",
-    "name": "LexiField Survey",
-    "tagline": "Fieldwork Lexeme Elicitation App",
-    "category": "Annotation",
-    "status": "Android / iOS App",
-    "icon": "mic",
-    "description": "A field survey application built for speaker interviews and Swadesh wordlist recording with offline audio capture, geotagging of speaker dialect zones, and instant cloud backup synchronization.",
-    "tags": ["Fieldwork", "Lexicography", "Dialect Survey", "Offline First"],
-    "links": [
-      { "label": "Get APK", "url": "#", "primary": true },
-      { "label": "GitHub Repo", "url": "#", "primary": false }
-    ]
-  },
-  {
-    "id": "kuki-concordancer",
-    "name": "IREN Concordancer",
-    "tagline": "Web Corpus Query & Morphological Search",
-    "category": "Platforms",
-    "status": "Web Platform · v2.1",
-    "icon": "sliders",
-    "description": "A fast web-based KWIC concordance engine and interlinear gloss search environment specifically calibrated for tonal and agglutinative Northeast Indian language corpora.",
-    "tags": ["Corpus Query", "KWIC", "Morphology", "Gloss Search"],
-    "links": [
-      { "label": "Launch App", "url": "#", "primary": true },
-      { "label": "Sample Corpora", "url": "#", "primary": false }
-    ]
-  },
-  {
-    "id": "indic-tone-eval",
-    "name": "ToneTrack Suite",
-    "tagline": "Acoustic Pitch & Tone Evaluation",
-    "category": "Evaluation",
-    "status": "Python CLI · GitHub",
-    "icon": "chart",
-    "description": "Automated pitch-contour extraction (f0) and tone category error classifier comparing synthetic text-to-speech audio against native speaker pitch tracks.",
-    "tags": ["Tone Tracking", "f0 Extraction", "TTS Evaluation", "Phonetics"],
-    "links": [
-      { "label": "GitHub Repo", "url": "#", "primary": true },
-      { "label": "PyPI Package", "url": "#", "primary": false }
+      { "label": "Watch the demo", "url": "https://youtu.be/NDtqi_Rch2I", "primary": false },
+      { "label": "Code on GitHub", "url": "https://github.com/RHuidrom96/aura", "primary": false }
     ]
   }
 ]
