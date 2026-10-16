@@ -208,11 +208,29 @@ nav a:hover {
   }
 }
 
+/* ==========================================================================
+   HERO & RINGS MANUAL CALIBRATION KNOBS
+   You can change any of these values directly to calibrate size and position:
+   --------------------------------------------------------------------------
+   --hero-ring-width        : Ripple horizontal spread (default 245%, try 200% - 280%)
+   --hero-ring-offset-y     : Ripple vertical shift (default 24px down, try 0px - 50px)
+   --hero-ring-scale-y      : Ripple vertical squashing (default 0.92, 1 = rounder, 0.85 = flatter)
+   --hero-lockup-width      : Center container width (default 560px, scales title & rings)
+   --hero-lockup-margin-top : Pushes entire center cluster down from navbar (default 36px)
+   ========================================================================== */
+:root {
+  --hero-ring-width: 245%;
+  --hero-ring-offset-y: 24px;
+  --hero-ring-scale-y: 0.92;
+  --hero-lockup-width: 560px;
+  --hero-lockup-margin-top: clamp(24px, 4vh, 48px);
+}
+
 .lockup {
   position: relative;
-  width: min(90vw, 560px, 44vh * 1.35);
+  width: min(90vw, var(--hero-lockup-width), 44vh * 1.35);
   aspect-ratio: 1080 / 840;
-  margin: 0 auto;
+  margin: var(--hero-lockup-margin-top) auto 0;
   container-type: inline-size;
   display: flex;
   flex-direction: column;
@@ -224,18 +242,19 @@ nav a:hover {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 255%;
+  width: var(--hero-ring-width);
   height: auto;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-50% + var(--hero-ring-offset-y))) scaleY(var(--hero-ring-scale-y));
   overflow: visible;
   pointer-events: none;
 }
 
 @media (max-width: 600px) {
   .hero-rings {
-    width: 340%;
+    width: calc(var(--hero-ring-width) * 1.3);
   }
   .lockup {
+    margin-top: 16px;
     margin-bottom: 4vw;
   }
 }

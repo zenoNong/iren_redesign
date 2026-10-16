@@ -1242,7 +1242,7 @@
 
     var ticking = false;
     function updateNav() {
-      if (window.scrollY > 15) {
+      if (window.scrollY > 40) {
         header.classList.add("scrolled");
       } else {
         header.classList.remove("scrolled");
