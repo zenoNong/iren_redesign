@@ -287,7 +287,8 @@
 
     const aboutCoalition = document.getElementById("about-coalition");
     if (aboutCoalition && data.about && data.about.coalition) {
-      aboutCoalition.innerHTML = `<strong><span class="iren-name">ɪreːn</span></strong> ${data.about.coalition.replace(/^ɪreːn\s*/, "")}`;
+      const textElem = aboutCoalition.querySelector(".coalition-glass-text") || aboutCoalition;
+      textElem.innerHTML = `<strong><span class="iren-name">ɪreːn</span></strong> ${data.about.coalition.replace(/^ɪreːn\s*/, "")}`;
     }
   }
 
@@ -311,9 +312,13 @@
       objectivesContainer.replaceChildren();
       data.objectives.forEach((obj, idx) => {
         const li = document.createElement("li");
-        li.className = "objective-card";
+        li.className = "objective-glass-card";
+        const num = obj.id || idx + 1;
         li.innerHTML = `
-          <div class="obj-badge" aria-hidden="true">${obj.id || idx + 1}</div>
+          <div class="obj-card-header">
+            <div class="obj-badge-glass" aria-hidden="true">${num}</div>
+            <span class="obj-roman">§ 0${num}</span>
+          </div>
           <div class="obj-content">
             <h4 class="obj-title">${obj.title}</h4>
             <p class="obj-desc">${obj.description}</p>

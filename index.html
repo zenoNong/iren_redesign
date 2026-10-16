@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+Devanagari:wght@300&family=Noto+Sans+Tamil:wght@300&family=Noto+Sans+Kannada:wght@300&family=Noto+Sans+Bengali:wght@300&family=Noto+Sans+Ethiopic:wght@300&family=Noto+Sans+Malayalam:wght@300&family=Noto+Sans+Telugu:wght@300&family=Noto+Sans+Gurmukhi:wght@300&display=swap" rel="stylesheet">
 
   <!-- Main Theme Stylesheet -->
-  <link rel="stylesheet" href="static/css/theme.css?v=3.2">
+  <link rel="stylesheet" href="static/css/theme.css?v=3.3">
 </head>
 <body>
 
@@ -67,69 +67,108 @@
     </section>
 
     <!-- About Section -->
-    <section class="block" id="about">
+    <section class="block section-glassmorphic" id="about">
       <div class="wrap">
-        <div class="section-head">
-          <h2>About <span class="iren-name">ɪreːn</span></h2>
-        </div>
-        <div class="about-prose main-body">
-          <p class="manifesto-lede" id="about-lead">
-            <strong><span class="iren-name">ɪreːn</span> 🌊</strong> (Interdisciplinary Research on Ethical &amp; Equitable NLP for under-resourced Languages) is a research collaboration dedicated to serving under-resourced languages: languages with little parallel data, few speakers available for paid annotation, writing systems that mainstream models do not cover, and communities whose data deserves careful governance.
-          </p>
-          <p class="about-narrative" id="about-tech">
-            We build and evaluate language technology for these languages, study how such systems should be measured, and create open tools that let speakers judge the output themselves. Our work so far includes translation and evaluation for Indic languages such as Manipuri (Meiteilon), written in both Bengali and Meitei Mayek script, and we welcome work on any under-resourced language.
-          </p>
-          <p class="about-coalition" id="about-coalition">
-            <strong><span class="iren-name">ɪreːn</span></strong> brings together researchers from Indian Central Universities, IITs, IIITs and NITs, along with international labs/institutions worldwide.
-          </p>
+        <div class="about-glass-canvas">
+          <div class="section-head glass-head">
+            <div class="apple-glass-kicker">
+              <span class="kicker-pulse"></span>
+              <span class="kicker-text">About Collaboration</span>
+            </div>
+            <h2>About <span class="iren-name">ɪreːn</span></h2>
+          </div>
+          <div class="about-prose main-body">
+            <p class="manifesto-lede" id="about-lead">
+              <strong><span class="iren-name">ɪreːn</span> 🌊</strong> (Interdisciplinary Research on Ethical &amp; Equitable NLP for under-resourced Languages) is a research collaboration dedicated to serving under-resourced languages: languages with little parallel data, few speakers available for paid annotation, writing systems that mainstream models do not cover, and communities whose data deserves careful governance.
+            </p>
+            <p class="about-narrative" id="about-tech">
+              We build and evaluate language technology for these languages, study how such systems should be measured, and create open tools that let speakers judge the output themselves. Our work so far includes translation and evaluation for Indic languages such as Manipuri (Meiteilon), written in both Bengali and Meitei Mayek script, and we welcome work on any under-resourced language.
+            </p>
+            <div class="about-coalition-glass" id="about-coalition">
+              <div class="coalition-glass-header">
+                <span class="coalition-glass-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                  <span>Institutional Consortium</span>
+                </span>
+              </div>
+              <p class="coalition-glass-text">
+                <strong><span class="iren-name">ɪreːn</span></strong> brings together researchers from Indian Central Universities, IITs, IIITs and NITs, along with international labs/institutions worldwide.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Aim and Objectives Section -->
-    <section class="block" id="objectives">
+    <section class="block section-glassmorphic" id="objectives">
       <span id="research" aria-hidden="true" style="position:relative; top:-80px;"></span>
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head glass-head">
+          <div class="apple-glass-kicker">
+            <span class="kicker-pulse"></span>
+            <span class="kicker-text">Vision &amp; Roadmap</span>
+          </div>
           <h2>Aim and objectives</h2>
         </div>
 
         <div class="objectives-layout">
           <!-- Aim Lead Block -->
-          <div class="aim-block" id="aim-block">
-            <h3 class="aim-title">Aim</h3>
-            <p class="aim-text" id="aim-text">
+          <div class="aim-glass-card" id="aim-block">
+            <div class="aim-glass-top">
+              <div class="aim-badge-pill">
+                <span class="aim-pulse-dot"></span>
+                <span class="aim-title">Aim</span>
+              </div>
+              <span class="aim-scope-tag">Overarching Research Mandate</span>
+            </div>
+            <p class="aim-statement-text" id="aim-text">
               To serve under-resourced languages with language technology that works as well for them, and for every script they are written in, as it does for high-resource languages, and to measure honestly whether it does.
             </p>
           </div>
 
           <!-- Objectives Grid -->
           <div class="objectives-wrapper">
-            <h3 class="objectives-subhead">Objectives</h3>
-            <ol class="objectives-grid" id="objectives-container">
-              <li class="objective-card">
-                <div class="obj-badge" aria-hidden="true">1</div>
+            <div class="objectives-head-row">
+              <h3 class="objectives-subhead">Objectives</h3>
+              <span class="objectives-count-pill">4 Strategic Pillars</span>
+            </div>
+            <ol class="objectives-glass-grid" id="objectives-container">
+              <li class="objective-glass-card">
+                <div class="obj-card-header">
+                  <div class="obj-badge-glass" aria-hidden="true">1</div>
+                  <span class="obj-roman">§ 01</span>
+                </div>
                 <div class="obj-content">
                   <h4 class="obj-title">Build for every language and script.</h4>
                   <p class="obj-desc">Develop translation and other language technology that produces well-formed output for under-resourced languages in each of their writing systems, even when authentic data is scarce.</p>
                 </div>
               </li>
-              <li class="objective-card">
-                <div class="obj-badge" aria-hidden="true">2</div>
+              <li class="objective-glass-card">
+                <div class="obj-card-header">
+                  <div class="obj-badge-glass" aria-hidden="true">2</div>
+                  <span class="obj-roman">§ 02</span>
+                </div>
                 <div class="obj-content">
                   <h4 class="obj-title">Evaluate with the right instrument.</h4>
                   <p class="obj-desc">Establish which automatic metrics and LLM judges can be trusted for which languages and scripts, rather than assuming that measures built for high-resource languages carry over.</p>
                 </div>
               </li>
-              <li class="objective-card">
-                <div class="obj-badge" aria-hidden="true">3</div>
+              <li class="objective-glass-card">
+                <div class="obj-card-header">
+                  <div class="obj-badge-glass" aria-hidden="true">3</div>
+                  <span class="obj-roman">§ 03</span>
+                </div>
                 <div class="obj-content">
                   <h4 class="obj-title">Put human judgement in speakers' hands.</h4>
                   <p class="obj-desc">Provide open, self-hostable human evaluation tools that record language, script and speaker provenance, run offline, and respect community data governance.</p>
                 </div>
               </li>
-              <li class="objective-card">
-                <div class="obj-badge" aria-hidden="true">4</div>
+              <li class="objective-glass-card">
+                <div class="obj-card-header">
+                  <div class="obj-badge-glass" aria-hidden="true">4</div>
+                  <span class="obj-roman">§ 04</span>
+                </div>
                 <div class="obj-content">
                   <h4 class="obj-title">Release openly.</h4>
                   <p class="obj-desc">Publish code, data and evaluation results so that other researchers and language communities can reuse and extend the work.</p>
