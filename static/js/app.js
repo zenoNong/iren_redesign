@@ -270,12 +270,11 @@
      3. RENDERERS
   ------------------------------------------------------------- */
 
-  // Research & About Sections — Scholarly Academic Presentation (Icon-Free)
-  async function renderResearch() {
+  // About Section Narrative Hydration
+  async function renderAbout() {
     const data = await fetchJSON("data/research.json");
     if (!data) return;
 
-    // Hydrate About Section narrative from data/research.json
     const aboutLead = document.getElementById("about-lead");
     if (aboutLead && data.about && data.about.lead) {
       aboutLead.innerHTML = data.about.lead;
@@ -290,43 +289,37 @@
     if (aboutCoalition && data.about && data.about.coalition) {
       aboutCoalition.innerHTML = `<strong><span class="iren-name">ɪreːn</span></strong> ${data.about.coalition.replace(/^ɪreːn\s*/, "")}`;
     }
+  }
 
-    // Render Research Domains (Scholarly Dossier Cards — Icon-Free)
-    const themesContainer = document.getElementById("themes-container");
-    if (themesContainer && data.themes) {
-      themesContainer.replaceChildren();
+  // Aim & Objectives Section Hydration
+  async function renderObjectives() {
+    let data = await fetchJSON("data/objectives.json");
+    if (!data) {
+      data = await fetchJSON("data/research.json");
+    }
+    if (!data) return;
 
-      const sectionMarkers = ["§ 01", "§ 02", "§ 03", "§ 04"];
-      const domainLabels = [
-        "Computational NLP & LLMs",
-        "Acoustic & Speech Science",
-        "Corpora & Documentation",
-        "Sociolinguistics & Code-Mixing"
-      ];
+    // Hydrate Aim
+    const aimText = document.getElementById("aim-text");
+    if (aimText && data.aim) {
+      aimText.textContent = data.aim.description || data.aim.statement;
+    }
 
-      data.themes.forEach((t, idx) => {
-        const article = document.createElement("article");
-        article.className = "theme research-card";
-        article.setAttribute("data-theme", t.id || `theme-${idx + 1}`);
-        const tagsHtml = t.tags ? t.tags.map(tag => `<span class="research-tag">${tag}</span>`).join("") : "";
-        article.innerHTML = `
-          <div class="research-card-top">
-            <span class="research-marker">${sectionMarkers[idx] || "§ 0" + (idx + 1)}</span>
-            <span class="research-domain">${domainLabels[idx] || "Research Domain"}</span>
-          </div>
-          <div class="research-card-body">
-            <h3 class="research-card-title">${t.title}</h3>
-            <p class="research-card-desc">${t.description}</p>
-          </div>
-          <div class="research-card-bottom">
-            <div class="research-tags-cluster">${tagsHtml}</div>
-            <a href="#publications" class="research-explore-link" aria-label="Explore research publications on ${t.title}">
-              <span>Publications</span>
-              <svg class="research-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+    // Hydrate Objectives Grid
+    const objectivesContainer = document.getElementById("objectives-container");
+    if (objectivesContainer && data.objectives && Array.isArray(data.objectives)) {
+      objectivesContainer.replaceChildren();
+      data.objectives.forEach((obj, idx) => {
+        const li = document.createElement("li");
+        li.className = "objective-card";
+        li.innerHTML = `
+          <div class="obj-badge" aria-hidden="true">${obj.id || idx + 1}</div>
+          <div class="obj-content">
+            <h4 class="obj-title">${obj.title}</h4>
+            <p class="obj-desc">${obj.description}</p>
           </div>
         `;
-        themesContainer.appendChild(article);
+        objectivesContainer.appendChild(li);
       });
     }
   }
@@ -1139,7 +1132,8 @@
   document.addEventListener("DOMContentLoaded", () => {
     initHeroAnimations();
     renderSiteConfig();
-    renderResearch();
+    renderAbout();
+    renderObjectives();
     renderPeople();
     renderPublications();
     renderTools();

@@ -5,6 +5,32 @@
     "technology": "We build and evaluate language technology for these languages, study how such systems should be measured, and create open tools that let speakers judge the output themselves. Our work so far includes translation and evaluation for Indic languages such as Manipuri (Meiteilon), written in both Bengali and Meitei Mayek script, and we welcome work on any under-resourced language.",
     "coalition": "ɪreːn brings together researchers from Indian Central Universities, IITs, IIITs and NITs, along with international labs/institutions worldwide."
   },
+  "aim": {
+    "title": "Aim",
+    "description": "To serve under-resourced languages with language technology that works as well for them, and for every script they are written in, as it does for high-resource languages, and to measure honestly whether it does."
+  },
+  "objectives": [
+    {
+      "id": 1,
+      "title": "Build for every language and script.",
+      "description": "Develop translation and other language technology that produces well-formed output for under-resourced languages in each of their writing systems, even when authentic data is scarce."
+    },
+    {
+      "id": 2,
+      "title": "Evaluate with the right instrument.",
+      "description": "Establish which automatic metrics and LLM judges can be trusted for which languages and scripts, rather than assuming that measures built for high-resource languages carry over."
+    },
+    {
+      "id": 3,
+      "title": "Put human judgement in speakers' hands.",
+      "description": "Provide open, self-hostable human evaluation tools that record language, script and speaker provenance, run offline, and respect community data governance."
+    },
+    {
+      "id": 4,
+      "title": "Release openly.",
+      "description": "Publish code, data and evaluation results so that other researchers and language communities can reuse and extend the work."
+    }
+  ],
   "mission": {
     "quote": "We build and evaluate language technology for these languages, study how such systems should be measured, and create open tools that let speakers judge the output themselves.",
     "lede": "ɪreːn 🌊 (Interdisciplinary Research on Ethical & Equitable NLP for under-resourced Languages) is a research collaboration dedicated to serving under-resourced languages."

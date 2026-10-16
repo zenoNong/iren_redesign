@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+Devanagari:wght@300&family=Noto+Sans+Tamil:wght@300&family=Noto+Sans+Kannada:wght@300&family=Noto+Sans+Bengali:wght@300&family=Noto+Sans+Ethiopic:wght@300&family=Noto+Sans+Malayalam:wght@300&family=Noto+Sans+Telugu:wght@300&family=Noto+Sans+Gurmukhi:wght@300&display=swap" rel="stylesheet">
 
   <!-- Main Theme Stylesheet -->
-  <link rel="stylesheet" href="static/css/theme.css?v=3.1">
+  <link rel="stylesheet" href="static/css/theme.css?v=3.2">
 </head>
 <body>
 
@@ -29,7 +29,7 @@
       <nav aria-label="Main Navigation">
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#research">Research</a></li>
+          <li><a href="#objectives">Objectives</a></li>
           <li><a href="#people">People</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#tools">Tools</a></li>
@@ -54,8 +54,8 @@
         </div>
         <p class="lede">We bring linguists, computer scientists, and language communities together to build data, tools, and models for languages that today’s technology leaves behind.</p>
         <div class="cta-row">
-          <a class="btn btn-solid" href="#research">
-            <span>See our research</span>
+          <a class="btn btn-solid" href="#objectives">
+            <span>Our objectives</span>
             <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a class="btn btn-ghost" href="#join">
@@ -86,19 +86,57 @@
       </div>
     </section>
 
-    <!-- Research Themes Section -->
-    <section class="block" id="research">
+    <!-- Aim and Objectives Section -->
+    <section class="block" id="objectives">
+      <span id="research" aria-hidden="true" style="position:relative; top:-80px;"></span>
       <div class="wrap">
         <div class="section-head">
-          <div class="editorial-kicker">
-            <span class="kicker-line"></span>
-            <span class="kicker-text">Core Research Domains</span>
-          </div>
-          <h2>Research Themes</h2>
-          <p>Our work sits where language science meets language technology. Four core themes guide our collaborative projects across under-resourced natural languages.</p>
+          <h2>Aim and objectives</h2>
         </div>
-        <div class="themes research-matrix" id="themes-container">
-          <!-- Populated dynamically from data/research.json -->
+
+        <div class="objectives-layout">
+          <!-- Aim Lead Block -->
+          <div class="aim-block" id="aim-block">
+            <h3 class="aim-title">Aim</h3>
+            <p class="aim-text" id="aim-text">
+              To serve under-resourced languages with language technology that works as well for them, and for every script they are written in, as it does for high-resource languages, and to measure honestly whether it does.
+            </p>
+          </div>
+
+          <!-- Objectives Grid -->
+          <div class="objectives-wrapper">
+            <h3 class="objectives-subhead">Objectives</h3>
+            <ol class="objectives-grid" id="objectives-container">
+              <li class="objective-card">
+                <div class="obj-badge" aria-hidden="true">1</div>
+                <div class="obj-content">
+                  <h4 class="obj-title">Build for every language and script.</h4>
+                  <p class="obj-desc">Develop translation and other language technology that produces well-formed output for under-resourced languages in each of their writing systems, even when authentic data is scarce.</p>
+                </div>
+              </li>
+              <li class="objective-card">
+                <div class="obj-badge" aria-hidden="true">2</div>
+                <div class="obj-content">
+                  <h4 class="obj-title">Evaluate with the right instrument.</h4>
+                  <p class="obj-desc">Establish which automatic metrics and LLM judges can be trusted for which languages and scripts, rather than assuming that measures built for high-resource languages carry over.</p>
+                </div>
+              </li>
+              <li class="objective-card">
+                <div class="obj-badge" aria-hidden="true">3</div>
+                <div class="obj-content">
+                  <h4 class="obj-title">Put human judgement in speakers' hands.</h4>
+                  <p class="obj-desc">Provide open, self-hostable human evaluation tools that record language, script and speaker provenance, run offline, and respect community data governance.</p>
+                </div>
+              </li>
+              <li class="objective-card">
+                <div class="obj-badge" aria-hidden="true">4</div>
+                <div class="obj-content">
+                  <h4 class="obj-title">Release openly.</h4>
+                  <p class="obj-desc">Publish code, data and evaluation results so that other researchers and language communities can reuse and extend the work.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
     </section>
