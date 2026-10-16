@@ -88,8 +88,11 @@ h1, h2, h3, h4, h5 {
 
 /* Header: Blends transparently at start, transitions to frosted glass on scroll */
 header.site {
-  position: sticky;
-  top: env(safe-area-inset-top, 0px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   background: transparent;
   backdrop-filter: none;
@@ -177,14 +180,14 @@ nav a:hover {
 .hero {
   position: relative;
   overflow: hidden;
-  height: calc(100vh - 64px);
-  height: calc(100dvh - 64px);
-  min-height: 560px;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 580px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: clamp(12px, 1.8vh, 24px) 24px clamp(24px, 4vh, 48px);
+  padding: calc(env(safe-area-inset-top, 0px) + 72px) 24px clamp(24px, 4vh, 48px);
   text-align: center;
   box-sizing: border-box;
   perspective: 1200px;

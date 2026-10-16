@@ -8,9 +8,18 @@
     "venue": "Proceedings of AACL-IJCNLP 2026: System Demonstrations",
     "note": "",
     "links": [
-      { "label": "Code", "url": "https://github.com/RHuidrom96/aura" },
-      { "label": "Platform", "url": "https://www.aura4lrl.studio" },
-      { "label": "Demo Video", "url": "https://youtu.be/NDtqi_Rch2I" }
+      {
+        "label": "Code",
+        "url": "https://github.com/RHuidrom96/aura"
+      },
+      {
+        "label": "Platform",
+        "url": "https://www.aura4lrl.studio"
+      },
+      {
+        "label": "Demo Video",
+        "url": "https://youtu.be/NDtqi_Rch2I"
+      }
     ]
   },
   {
@@ -22,8 +31,14 @@
     "venue": "Proceedings of the Eleventh Conference on Machine Translation (WMT 2026), Shared Task on Low-Resource Indic Language Translation, pages 2161–2169",
     "note": "† Equal contribution",
     "links": [
-      { "label": "Paper", "url": "https://www2.statmt.org/wmt26/pdf/2026.wmt-1.154.pdf" },
-      { "label": "Code", "url": "https://github.com/RHuidrom96/WMT-2026-Team-PANINI" }
+      {
+        "label": "Paper",
+        "url": "https://www2.statmt.org/wmt26/pdf/2026.wmt-1.154.pdf"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/RHuidrom96/WMT-2026-Team-PANINI"
+      }
     ]
   },
   {
@@ -35,21 +50,14 @@
     "venue": "Proceedings of the Eleventh Conference on Machine Translation (WMT 2026), Research Track, pages 288–310",
     "note": "† Equal contribution",
     "links": [
-      { "label": "Paper", "url": "https://www2.statmt.org/wmt26/pdf/2026.wmt-1.17.pdf" },
-      { "label": "Code", "url": "https://github.com/RHuidrom96/which-metric-which-script" }
-    ]
-  },
-  {
-    "id": "meitei-speech-corpus-2025",
-    "year": 2025,
-    "kind": "dataset",
-    "title": "A Multi-Speaker Read Speech Corpus for Low-Resource Manipuri with Bengali and Meitei Mayek Dual-Script Alignments",
-    "authors": "Rudali Huidrom, Anand Konjengbam, K Kabi Khanganba, Hoomexsun Pangsatabam, and Vikram Goyal",
-    "venue": "Language Resources and Evaluation Conference (LREC-COLING 2025)",
-    "note": "",
-    "links": [
-      { "label": "Dataset", "url": "https://huggingface.co/datasets/iren" },
-      { "label": "Datasheet", "url": "#" }
+      {
+        "label": "Paper",
+        "url": "https://www2.statmt.org/wmt26/pdf/2026.wmt-1.17.pdf"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/RHuidrom96/which-metric-which-script"
+      }
     ]
   },
   {
@@ -61,8 +69,14 @@
     "venue": "Proceedings of Findings of EMNLP 2025",
     "note": "† Equal contribution",
     "links": [
-      { "label": "Paper", "url": "#" },
-      { "label": "Code", "url": "#" }
+      {
+        "label": "Paper",
+        "url": "#"
+      },
+      {
+        "label": "Code",
+        "url": "#"
+      }
     ]
   },
   {
@@ -74,20 +88,14 @@
     "venue": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025): System Demonstrations",
     "note": "",
     "links": [
-      { "label": "GitHub", "url": "#" },
-      { "label": "Docs", "url": "#" }
-    ]
-  },
-  {
-    "id": "indigenous-lexicon-2024",
-    "year": 2024,
-    "kind": "dataset",
-    "title": "Parallel Sentences and Morphological Lexicons for Under-Represented North-East Indian Indigenous Languages",
-    "authors": "Hoomexsun Pangsatabam, Normoda Doley, Kanal Trivedi, and Rudali Huidrom",
-    "venue": "Proceedings of the 21st International Conference on Natural Language Processing (ICON 2024)",
-    "note": "",
-    "links": [
-      { "label": "Dataset", "url": "#" }
+      {
+        "label": "GitHub",
+        "url": "#"
+      },
+      {
+        "label": "Docs",
+        "url": "#"
+      }
     ]
   },
   {
@@ -99,8 +107,14 @@
     "venue": "The 10th Workshop on Computational Approaches to Linguistic Code-Switching (CALCS 2024)",
     "note": "",
     "links": [
-      { "label": "Paper", "url": "#" },
-      { "label": "Code", "url": "#" }
+      {
+        "label": "Paper",
+        "url": "#"
+      },
+      {
+        "label": "Code",
+        "url": "#"
+      }
     ]
   }
 ]
