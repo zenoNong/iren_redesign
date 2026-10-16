@@ -455,24 +455,35 @@
 
     let currentFilter = "all";
     let currentPage = 1;
-    const ITEMS_PER_PAGE = 2; // User requested strictly 2 rows max per page
+    const ITEMS_PER_PAGE = 3; // Exactly 3 rows max per page
 
-    // Filter counts
-    const counts = {
-      all: pubs.length,
-      paper: pubs.filter(p => (p.kind || "paper") === "paper").length,
-      software: pubs.filter(p => p.kind === "software").length,
-      dataset: pubs.filter(p => p.kind === "dataset").length
+    const KIND_LABELS = {
+      paper: "Papers",
+      software: "Software & Demos",
+      dataset: "Datasets",
+      preprint: "Preprints",
+      report: "Reports"
     };
 
-    // Build filter capsule bar
+    // Calculate dynamic kind counts from actual publications data
+    const kindCounts = {};
+    pubs.forEach(p => {
+      const k = (p.kind || "paper").toLowerCase().trim();
+      kindCounts[k] = (kindCounts[k] || 0) + 1;
+    });
+
+    // Only include categories that exist in data and have count > 0
+    const availableKinds = Object.keys(kindCounts).filter(k => kindCounts[k] > 0);
+
+    // Build filter capsule bar dynamically
     if (filterContainer) {
-      filterContainer.innerHTML = `
-        <button type="button" class="pub-filter-btn active" data-filter="all">All (${counts.all})</button>
-        <button type="button" class="pub-filter-btn" data-filter="paper">Papers (${counts.paper})</button>
-        <button type="button" class="pub-filter-btn" data-filter="software">Software & Demos (${counts.software})</button>
-        <button type="button" class="pub-filter-btn" data-filter="dataset">Datasets (${counts.dataset})</button>
-      `;
+      const allBtn = `<button type="button" class="pub-filter-btn active" data-filter="all">All (${pubs.length})</button>`;
+      const kindBtns = availableKinds.map(k => {
+        const label = KIND_LABELS[k] || (k.charAt(0).toUpperCase() + k.slice(1));
+        return `<button type="button" class="pub-filter-btn" data-filter="${k}">${label} (${kindCounts[k]})</button>`;
+      }).join("");
+
+      filterContainer.innerHTML = allBtn + kindBtns;
 
       filterContainer.querySelectorAll(".pub-filter-btn").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -613,7 +624,7 @@
     function updateView(shouldScroll = false) {
       const filtered = pubs.filter(p => {
         if (currentFilter === "all") return true;
-        return (p.kind || "paper") === currentFilter;
+        return (p.kind || "paper").toLowerCase().trim() === currentFilter.toLowerCase();
       });
 
       const totalItems = filtered.length;
@@ -651,7 +662,7 @@
     updateView();
   }
 
-  // Tools Section with Apple Glassmorphic Cards, Category Filtering, and 2-row Pagination
+  // Tools Section with Apple Glassmorphic Cards, Category Filtering, and 1-row Pagination
   async function renderTools() {
     const tools = await fetchJSON("data/tools.json");
     const container = document.getElementById("tools-container");
@@ -661,7 +672,7 @@
 
     let currentCategory = "all";
     let currentPage = 1;
-    const TOOLS_PER_PAGE = 6; // Max 2 rows (3 columns × 2 rows = 6 items per page)
+    const TOOLS_PER_PAGE = 3; // Exactly 1 row (3 columns × 1 row = 3 items per page)
 
     // SVG icon mapping
     const icons = {
@@ -673,22 +684,28 @@
       waveform: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10v4M6 6v12M10 3v18M14 8v8M18 5v14M22 10v4"/></svg>`
     };
 
-    // Calculate category counts
-    const categories = ["all", "Platforms", "Models & APIs", "Annotation", "Evaluation"];
-    const counts = { all: tools.length };
+    // Calculate category counts dynamically from actual tools data
+    const categoryCounts = {};
     tools.forEach(t => {
-      const cat = t.category || "Platforms";
-      counts[cat] = (counts[cat] || 0) + 1;
+      const cat = (t.category || "Platforms").trim();
+      if (cat) {
+        categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+      }
     });
 
-    // Build filter capsule bar
+    // Only include categories that exist in data and have count > 0
+    const availableCategories = Object.keys(categoryCounts).filter(c => categoryCounts[c] > 0);
+
+    // Build filter capsule bar dynamically
     if (filterContainer) {
-      filterContainer.innerHTML = categories.map(cat => {
-        const count = counts[cat] || 0;
-        const label = cat === "all" ? "All" : cat;
+      const allBtn = `<button type="button" class="tool-filter-btn ${currentCategory === "all" ? "active" : ""}" data-category="all">All (${tools.length})</button>`;
+      const catBtns = availableCategories.map(cat => {
+        const count = categoryCounts[cat];
         const isActive = cat === currentCategory ? "active" : "";
-        return `<button type="button" class="tool-filter-btn ${isActive}" data-category="${cat}">${label} (${count})</button>`;
+        return `<button type="button" class="tool-filter-btn ${isActive}" data-category="${cat}">${cat} (${count})</button>`;
       }).join("");
+
+      filterContainer.innerHTML = allBtn + catBtns;
 
       filterContainer.querySelectorAll(".tool-filter-btn").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -744,9 +761,9 @@
       const totalPages = Math.ceil(totalItems / TOOLS_PER_PAGE);
 
       if (totalPages <= 1) {
-        if (totalItems > 0 && totalItems >= 6) {
+        if (totalItems > 0) {
           pageWrapper.innerHTML = `
-            <div class="tools-pagination-info">Showing all ${totalItems} tools</div>
+            <div class="tools-pagination-info">Showing all ${totalItems} tool${totalItems === 1 ? '' : 's'}</div>
           `;
         } else {
           pageWrapper.replaceChildren();
@@ -807,7 +824,7 @@
     function updateToolsView(shouldScroll = false) {
       const filtered = tools.filter(t => {
         if (currentCategory === "all") return true;
-        return (t.category || "Platforms") === currentCategory;
+        return (t.category || "Platforms").trim().toLowerCase() === currentCategory.toLowerCase();
       });
 
       const totalItems = filtered.length;
