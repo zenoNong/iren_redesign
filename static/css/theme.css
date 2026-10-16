@@ -209,54 +209,75 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   HERO & RINGS MANUAL CALIBRATION KNOBS
-   You can change any of these values directly to calibrate size and position:
+   HERO & BACKGROUND RINGS MANUAL CALIBRATION KNOBS
+   Edit these values directly in theme.css to calibrate size, position, and text:
    --------------------------------------------------------------------------
-   --hero-ring-width        : Ripple horizontal spread (default 245%, try 200% - 280%)
-   --hero-ring-offset-y     : Ripple vertical shift (default 24px down, try 0px - 50px)
-   --hero-ring-scale-y      : Ripple vertical squashing (default 0.92, 1 = rounder, 0.85 = flatter)
-   --hero-lockup-width      : Center container width (default 560px, scales title & rings)
-   --hero-lockup-margin-top : Pushes entire center cluster down from navbar (default 36px)
+   1. BACKGROUND RIPPLE RINGS (Spanning behind all text & buttons)
+      --hero-ring-width       : Ring ripple width across screen (default min(1560px, 130vw))
+      --hero-ring-top         : Center vertical position of rings (default 50%)
+      --hero-ring-offset-y    : Fine-tune rings up/down (positive = down, negative = up)
+      --hero-ring-scale-y     : Ring vertical stretch/height (default 1.05, try 0.9 - 1.25)
+
+   2. MULTILINGUAL SCRIPT TITLE (h1#name)
+      --hero-title-size       : Title font size (default clamp(3.8rem, 7.2vw, 5.8rem))
+      --hero-lockup-margin-top: Pushes the entire title block down (default clamp(20px, 4vh, 48px))
+
+   3. SUBTITLE & LEDE TEXT
+      --hero-fullform-size    : Tagline font size (default clamp(0.95rem, 1.35vw, 1.15rem))
+      --hero-lede-size        : Lede statement font size (default clamp(1.12rem, 1.5vw, 1.28rem))
+      --hero-lede-margin-top  : Space above the lede text (default clamp(18px, 3vh, 32px))
+
+   4. ACTION BUTTONS
+      --hero-cta-margin-top   : Space above buttons (default clamp(16px, 2.5vh, 28px))
    ========================================================================== */
 :root {
-  --hero-ring-width: 245%;
-  --hero-ring-offset-y: 24px;
-  --hero-ring-scale-y: 0.92;
-  --hero-lockup-width: 560px;
-  --hero-lockup-margin-top: clamp(24px, 4vh, 48px);
-}
+  /* 1. Background Ripple Rings */
+  --hero-ring-width: min(1560px, 130vw);
+  --hero-ring-top: 54%;
+  --hero-ring-offset-y: 20px;
+  --hero-ring-scale-y: 1.18;
 
-.lockup {
-  position: relative;
-  width: min(90vw, var(--hero-lockup-width), 44vh * 1.35);
-  aspect-ratio: 1080 / 840;
-  margin: var(--hero-lockup-margin-top) auto 0;
-  container-type: inline-size;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* 2. Multilingual Title */
+  --hero-lockup-margin-top: clamp(20px, 4vh, 48px);
+  --hero-title-size: clamp(3.8rem, 7.2vw, 5.8rem);
+
+  /* 3. Subtitle & Lede */
+  --hero-fullform-size: clamp(0.95rem, 1.35vw, 1.15rem);
+  --hero-lede-size: clamp(1.12rem, 1.5vw, 1.28rem);
+  --hero-lede-margin-top: clamp(18px, 3vh, 32px);
+
+  /* 4. Action Buttons */
+  --hero-cta-margin-top: clamp(16px, 2.5vh, 28px);
 }
 
 .hero-rings {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: var(--hero-ring-top);
   width: var(--hero-ring-width);
+  max-width: none;
   height: auto;
   transform: translate(-50%, calc(-50% + var(--hero-ring-offset-y))) scaleY(var(--hero-ring-scale-y));
   overflow: visible;
   pointer-events: none;
+  z-index: 1;
 }
 
 @media (max-width: 600px) {
   .hero-rings {
-    width: calc(var(--hero-ring-width) * 1.3);
+    width: 175vw;
   }
-  .lockup {
-    margin-top: 16px;
-    margin-bottom: 4vw;
-  }
+}
+
+.lockup {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  margin: var(--hero-lockup-margin-top) auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-rings path {
@@ -291,7 +312,7 @@ nav a:hover {
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -304,7 +325,7 @@ nav a:hover {
 
 .hero h1 {
   font-weight: 300;
-  font-size: clamp(3.2rem, 15cqw, 5.0rem);
+  font-size: var(--hero-title-size);
   line-height: 1.15;
   animation: breathe 7s ease-in-out infinite;
   min-height: 1.25em;
@@ -347,11 +368,11 @@ nav a:hover {
 
 .fullform {
   text-wrap: balance;
-  margin: clamp(8px, 2cqw, 16px) auto 0;
-  max-width: 25em;
+  margin: clamp(10px, 1.8vh, 18px) auto 0;
+  max-width: 28em;
   font-family: var(--sans);
   font-weight: 300;
-  font-size: clamp(0.92rem, 2.5cqw, 1.15rem);
+  font-size: var(--hero-fullform-size);
   line-height: 1.45;
   letter-spacing: .15em;
   color: var(--ink);
@@ -365,12 +386,12 @@ nav a:hover {
 }
 
 .hero .lede {
-  max-width: 42em;
-  font-size: clamp(1.08rem, 1.45vw, 1.25rem);
+  max-width: 44em;
+  font-size: var(--hero-lede-size);
   font-weight: 300;
   color: var(--ink-soft);
   line-height: 1.6;
-  margin: clamp(14px, 2.4vh, 28px) auto clamp(16px, 2.6vh, 30px);
+  margin: var(--hero-lede-margin-top) auto clamp(16px, 2.6vh, 30px);
   text-wrap: balance;
 }
 
@@ -379,7 +400,7 @@ nav a:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
-  margin: 0 auto;
+  margin: var(--hero-cta-margin-top) auto 0;
   padding-bottom: clamp(6px, 1.5vh, 18px);
 }
 
