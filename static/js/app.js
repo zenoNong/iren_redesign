@@ -1235,10 +1235,36 @@
     initContactForm(site);
   }
 
+  // Dynamic Navbar Scroll Glassmorphism
+  function initNavScroll() {
+    var header = document.querySelector("header.site");
+    if (!header) return;
+
+    var ticking = false;
+    function updateNav() {
+      if (window.scrollY > 15) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", function() {
+      if (!ticking) {
+        requestAnimationFrame(updateNav);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    updateNav();
+  }
+
   /* -------------------------------------------------------------
      4. INITIALIZATION
   ------------------------------------------------------------- */
   document.addEventListener("DOMContentLoaded", () => {
+    initNavScroll();
     initHeroAnimations();
     renderSiteConfig();
     renderAbout();
