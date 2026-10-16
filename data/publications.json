@@ -13,11 +13,11 @@
         "url": "https://github.com/RHuidrom96/aura"
       },
       {
-        "label": "Platform",
+        "label": "Live platform",
         "url": "https://www.aura4lrl.studio"
       },
       {
-        "label": "Demo Video",
+        "label": "Demo video",
         "url": "https://youtu.be/NDtqi_Rch2I"
       }
     ]
@@ -57,63 +57,6 @@
       {
         "label": "Code",
         "url": "https://github.com/RHuidrom96/which-metric-which-script"
-      }
-    ]
-  },
-  {
-    "id": "cross-script-transfer-2025",
-    "year": 2025,
-    "kind": "paper",
-    "title": "Cross-Script Representation Learning for Dual-Script Indic Languages Under Extreme Data Scarcity",
-    "authors": "Vikas Kumar†, Rudali Huidrom†, Pinaki Das, Kshetrimayum Boynao Singh, and Anand Konjengbam",
-    "venue": "Proceedings of Findings of EMNLP 2025",
-    "note": "† Equal contribution",
-    "links": [
-      {
-        "label": "Paper",
-        "url": "#"
-      },
-      {
-        "label": "Code",
-        "url": "#"
-      }
-    ]
-  },
-  {
-    "id": "scriba-toolkit-2025",
-    "year": 2025,
-    "kind": "software",
-    "title": "Scriba: An Offline-First Audio-Text Annotation and Elicitation Toolkit for Community Field Linguists",
-    "authors": "Nicholas Khumukcham, Justice Konjengbam, Jesu Nazarene Roy L, and Rudali Huidrom",
-    "venue": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025): System Demonstrations",
-    "note": "",
-    "links": [
-      {
-        "label": "GitHub",
-        "url": "#"
-      },
-      {
-        "label": "Docs",
-        "url": "#"
-      }
-    ]
-  },
-  {
-    "id": "codemixed-bench-2024",
-    "year": 2024,
-    "kind": "paper",
-    "title": "Evaluating Neural Machine Translation and LLMs on Informal Social Media Code-Mixed Indic Text",
-    "authors": "Sai Varun Jamalpoor, Rudali Huidrom, Alex D Nelson Khangembam, and Vikram Goyal",
-    "venue": "The 10th Workshop on Computational Approaches to Linguistic Code-Switching (CALCS 2024)",
-    "note": "",
-    "links": [
-      {
-        "label": "Paper",
-        "url": "#"
-      },
-      {
-        "label": "Code",
-        "url": "#"
       }
     ]
   }
