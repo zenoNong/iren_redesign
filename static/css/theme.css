@@ -270,77 +270,7 @@ nav a:hover {
   z-index: 1;
 }
 
-/* ==========================================================================
-   MOBILE-SPECIFIC HERO & NAVIGATION TUNING (Screens <= 640px)
-   Leaves desktop view 100% untouched.
-   ========================================================================== */
-@media (max-width: 640px) {
-  :root {
-    /* 1. Mobile Rings: spread wider horizontally across viewport without vertical egg-squashing */
-    --hero-ring-width: 280vw;
-    --hero-ring-top: 42%;
-    --hero-ring-offset-y: 10px;
-    --hero-ring-scale-y: 0.98;
 
-    /* 2. Mobile Title: proportional size and compact top margin below mobile navbar */
-    --hero-lockup-margin-top: clamp(16px, 3vh, 32px);
-    --hero-title-size: clamp(2.8rem, 13vw, 4.0rem);
-
-    /* 3. Mobile Subtitle & Lede: balanced reading size and natural margins */
-    --hero-fullform-size: 0.92rem;
-    --hero-lede-size: 1.04rem;
-    --hero-lede-margin-top: clamp(16px, 3vh, 28px);
-
-    /* 4. Mobile Action Buttons */
-    --hero-cta-margin-top: clamp(14px, 2.5vh, 22px);
-  }
-
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding: calc(env(safe-area-inset-top, 0px) + 98px) 20px clamp(20px, 4vh, 36px);
-  }
-
-  .hero-inner {
-    justify-content: center;
-    gap: 0;
-  }
-
-  .fullform {
-    max-width: 22em;
-    padding: 0 8px;
-    margin-top: 10px;
-  }
-
-  .hero .lede {
-    max-width: 28em;
-    padding: 0 6px;
-    margin-bottom: clamp(14px, 2.5vh, 24px);
-  }
-
-  .cta-row {
-    width: 100%;
-    max-width: 330px;
-    gap: 12px;
-  }
-
-  .cta-row .btn {
-    width: 100%;
-    padding: 13px 20px;
-  }
-
-  nav ul {
-    gap: 2px;
-    padding: 0 4px 4px;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  nav a {
-    padding: 6px 10px;
-    font-size: 0.88rem;
-  }
-}
 
 .lockup {
   position: relative;
@@ -487,6 +417,102 @@ nav a:hover {
   gap: 16px;
   margin: var(--hero-cta-margin-top) auto 0;
   padding-bottom: clamp(6px, 1.5vh, 18px);
+}
+
+/* ==========================================================================
+   MOBILE-SPECIFIC HERO & NAVIGATION TUNING (Screens <= 768px)
+   Placed directly after all desktop hero component rules to guarantee cascade override.
+   Leaves desktop view 100% untouched.
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    /* 1. Mobile Rings: spread wide (285vw) across phone screen without egg-squash */
+    --hero-ring-width: 285vw;
+    --hero-ring-top: 38%;
+    --hero-ring-offset-y: 10px;
+    --hero-ring-scale-y: 0.95;
+
+    /* 2. Mobile Title: proportional size and compact top margin below mobile navbar */
+    --hero-lockup-margin-top: 14px;
+    --hero-title-size: clamp(2.8rem, 12vw, 3.8rem);
+
+    /* 3. Mobile Subtitle & Lede */
+    --hero-fullform-size: 0.92rem;
+    --hero-lede-size: 1.02rem;
+    --hero-lede-margin-top: 16px;
+
+    /* 4. Mobile Action Buttons */
+    --hero-cta-margin-top: 18px;
+  }
+
+  .hero {
+    height: auto !important;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 94px) !important;
+    padding-bottom: max(36px, env(safe-area-inset-bottom, 24px) + 24px) !important;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-inner {
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    flex: 1;
+  }
+
+  .lockup {
+    margin-top: var(--hero-lockup-margin-top) !important;
+  }
+
+  .hero h1 {
+    font-size: var(--hero-title-size) !important;
+    line-height: 1.15;
+  }
+
+  .fullform {
+    max-width: 22em;
+    font-size: var(--hero-fullform-size) !important;
+    padding: 0 8px;
+    margin-top: 8px !important;
+  }
+
+  .hero .lede {
+    max-width: 28em;
+    font-size: var(--hero-lede-size) !important;
+    margin-top: var(--hero-lede-margin-top) !important;
+    margin-bottom: 16px !important;
+    padding: 0 6px;
+  }
+
+  .cta-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 330px;
+    gap: 12px !important;
+    margin-top: var(--hero-cta-margin-top) !important;
+    margin-bottom: 24px !important;
+    padding-bottom: max(24px, env(safe-area-inset-bottom, 20px) + 8px) !important;
+  }
+
+  .cta-row .btn {
+    width: 100% !important;
+    padding: 14px 20px !important;
+    text-align: center;
+  }
+
+  nav ul {
+    gap: 2px;
+    padding: 0 4px 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav a {
+    padding: 6px 10px;
+    font-size: 0.88rem;
+  }
 }
 
 .btn {
