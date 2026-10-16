@@ -26,7 +26,8 @@
         <svg class="brand-mark" viewBox="-60 -46 120 92" aria-hidden="true"><path data-ring="0"/></svg>
         <span class="brand-name">ɪreːn 🌊</span>
       </a>
-      <nav aria-label="Main Navigation">
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#objectives">Objectives</a></li>
@@ -38,6 +39,39 @@
           <li><a href="#contact">Contact us</a></li>
         </ul>
       </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Glassmorphic Pop-up Drawer -->
+    <div class="mobile-nav-menu" id="mobile-nav-menu" aria-hidden="true">
+      <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+      <div class="mobile-nav-panel">
+        <div class="mobile-nav-top">
+          <span class="brand-name">ɪreːn 🌊</span>
+          <button class="mobile-nav-close" id="mobile-nav-close" type="button" aria-label="Close navigation menu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-nav-list">
+          <li><a href="#about" class="mobile-nav-link"><span>About</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a href="#objectives" class="mobile-nav-link"><span>Aim &amp; Objectives</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a href="#collaborators" class="mobile-nav-link"><span>Collaborators</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a href="#publications" class="mobile-nav-link"><span>Publications</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a href="#tools" class="mobile-nav-link"><span>Tools</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a href="#news" class="mobile-nav-link"><span>News</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a href="#gallery" class="mobile-nav-link"><span>Gallery</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a href="#contact" class="mobile-nav-link mobile-nav-cta"><span>Contact us</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+        </ul>
+      </div>
     </div>
   </header>
 

@@ -1266,11 +1266,65 @@
     updateNav();
   }
 
+  // Mobile Navigation Pop-up Toggle & Drawer
+  function initMobileNav() {
+    const toggleBtn = document.getElementById("mobile-nav-toggle");
+    const closeBtn = document.getElementById("mobile-nav-close");
+    const menu = document.getElementById("mobile-nav-menu");
+    const backdrop = document.getElementById("mobile-nav-backdrop");
+    if (!toggleBtn || !menu) return;
+
+    function openMenu() {
+      menu.classList.add("is-open");
+      menu.setAttribute("aria-hidden", "false");
+      toggleBtn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      menu.classList.remove("is-open");
+      menu.setAttribute("aria-hidden", "true");
+      toggleBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      if (menu.classList.contains("is-open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+    if (backdrop) backdrop.addEventListener("click", closeMenu);
+
+    // Close when clicking any link inside the mobile menu
+    menu.querySelectorAll(".mobile-nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menu.classList.contains("is-open")) {
+        closeMenu();
+      }
+    });
+
+    // Auto-open if URL has ?nav (useful for deep-linking and visual testing)
+    if (window.location.search.includes("nav")) {
+      setTimeout(openMenu, 300);
+    }
+  }
+
   /* -------------------------------------------------------------
      4. INITIALIZATION
   ------------------------------------------------------------- */
   document.addEventListener("DOMContentLoaded", () => {
     initNavScroll();
+    initMobileNav();
     initHeroAnimations();
     renderSiteConfig();
     renderAbout();
