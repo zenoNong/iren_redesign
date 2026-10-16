@@ -179,12 +179,12 @@ nav a:hover {
   overflow: hidden;
   height: calc(100vh - 64px);
   height: calc(100dvh - 64px);
-  min-height: 520px;
+  min-height: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 0 24px;
+  justify-content: space-between;
+  padding: clamp(12px, 1.8vh, 24px) 24px clamp(24px, 4vh, 48px);
   text-align: center;
   box-sizing: border-box;
   perspective: 1200px;
@@ -197,7 +197,7 @@ nav a:hover {
     radial-gradient(ellipse 60% 45% at 25% 75%, rgba(235, 226, 240, 0.28) 0%, transparent 65%);
 }
 
-@media (max-height: 560px) {
+@media (max-height: 580px) {
   .hero {
     height: auto;
     min-height: auto;
@@ -207,8 +207,8 @@ nav a:hover {
 
 .lockup {
   position: relative;
-  width: min(86vw, 440px, 36vh * 1.35);
-  aspect-ratio: 1080 / 800;
+  width: min(90vw, 560px, 44vh * 1.35);
+  aspect-ratio: 1080 / 840;
   margin: 0 auto;
   container-type: inline-size;
   display: flex;
@@ -221,7 +221,7 @@ nav a:hover {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 250%;
+  width: 255%;
   height: auto;
   transform: translate(-50%, -50%);
   overflow: visible;
@@ -230,10 +230,10 @@ nav a:hover {
 
 @media (max-width: 600px) {
   .hero-rings {
-    width: 320%;
+    width: 340%;
   }
   .lockup {
-    margin-bottom: 3vw;
+    margin-bottom: 4vw;
   }
 }
 
@@ -271,21 +271,21 @@ nav a:hover {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 980px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: clamp(10px, 1.8vh, 18px);
+  justify-content: space-between;
+  flex: 1;
 }
 
 .hero h1 {
   font-weight: 300;
-  font-size: clamp(2.4rem, 12cqw, 3.8rem);
+  font-size: clamp(3.2rem, 15cqw, 5.0rem);
   line-height: 1.15;
   animation: breathe 7s ease-in-out infinite;
-  min-height: 1.2em;
+  min-height: 1.25em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -325,13 +325,13 @@ nav a:hover {
 
 .fullform {
   text-wrap: balance;
-  margin: clamp(4px, 1.4cqw, 10px) auto 0;
-  max-width: 24em;
+  margin: clamp(8px, 2cqw, 16px) auto 0;
+  max-width: 25em;
   font-family: var(--sans);
   font-weight: 300;
-  font-size: clamp(0.78rem, 2.1cqw, 0.95rem);
+  font-size: clamp(0.92rem, 2.5cqw, 1.15rem);
   line-height: 1.45;
-  letter-spacing: .12em;
+  letter-spacing: .15em;
   color: var(--ink);
   background: none;
   border: none;
@@ -343,12 +343,12 @@ nav a:hover {
 }
 
 .hero .lede {
-  max-width: 38em;
-  font-size: clamp(0.96rem, 1.2vw, 1.12rem);
+  max-width: 42em;
+  font-size: clamp(1.08rem, 1.45vw, 1.25rem);
   font-weight: 300;
   color: var(--ink-soft);
-  line-height: 1.55;
-  margin: 0 auto;
+  line-height: 1.6;
+  margin: clamp(14px, 2.4vh, 28px) auto clamp(16px, 2.6vh, 30px);
   text-wrap: balance;
 }
 
@@ -356,18 +356,18 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 14px;
+  gap: 16px;
   margin: 0 auto;
-  padding-top: 4px;
+  padding-bottom: clamp(6px, 1.5vh, 18px);
 }
 
 .btn {
   font-family: var(--sans);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.02rem;
   letter-spacing: .06em;
   text-decoration: none;
-  padding: 12px 28px;
+  padding: 13px 32px;
   border-radius: 999px;
   border: 1.5px solid var(--ink);
   display: inline-flex;
