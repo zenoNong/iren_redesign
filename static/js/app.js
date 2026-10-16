@@ -24,11 +24,13 @@
 
     var svg = document.getElementById("rings"), NS = "http://www.w3.org/2000/svg";
     if (svg) {
+      var N = 12;
       svg.replaceChildren();
-      for (var r = 0; r < 7; r++) {
+      for (var r = 0; r < N; r++) {
         var p = document.createElementNS(NS, "path");
-        p.setAttribute("d", blob(330 + r * 22, 250 + r * 20, 1.1 + r * 0.28, 0.06 + r * 0.01));
+        p.setAttribute("d", blob(330 + r * 38 + r * r * 4, 250 + r * 14 + r * r * 0.6, 1.1 + r * 0.28, 0.06 + r * 0.008));
         p.style.setProperty("--i", r);
+        p.style.setProperty("--f", (r / (N - 1)).toFixed(3));
         svg.appendChild(p);
       }
     }
@@ -39,14 +41,15 @@
     }
 
     var names = [
-      ["IREN", "en"],
+      ["ɪreːn", "en"],
       ["आइरेन", "hi"],
       ["ஐரென்", "ta"],
-      ["ಐರೆನ್", "kn"],
-      ["আইরেন", "bn"],
       ["ഐറെൻ", "ml"],
+      ["আইরেন", "bn"],
+      ["ಐರೆನ್", "kn"],
       ["ఐరెన్", "te"],
       ["ਆਈਰੇਨ", "pa"],
+      ["ꯏꯔꯦꯟ", "mni"],
       ["አይረን", "am"]
     ];
 
@@ -120,9 +123,9 @@
             current = build(names[i][0], names[i][1], i === 0);
             return rollIn(current);
           }).then(cycle);
-        }, 2800);
+        }, 3200);
       };
-      setTimeout(cycle, 1200);
+      setTimeout(cycle, 1500);
     }
 
     // Interactive 3D Spatial Tilt on Hero Section (High-Performance Dampened)
