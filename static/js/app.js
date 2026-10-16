@@ -1113,17 +1113,112 @@
     setupSliderControls(track, prevBtn, nextBtn);
   }
 
+  // Contact Form (FormSubmit Integration)
+  function initContactForm(site) {
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("contact-status");
+    const submitBtn = document.getElementById("contact-submit-btn");
+    const nameInput = document.getElementById("contact-name");
+    const emailInput = document.getElementById("contact-email");
+    const categorySelect = document.getElementById("contact-category");
+    const messageInput = document.getElementById("contact-message");
+    const honeyInput = document.getElementById("contact-honey");
+
+    if (!form || !submitBtn || !status) return;
+
+    // Use recipient configured in site.json or default to coordinator
+    const recipientEmail = (site && site.contact && site.contact.email) ? site.contact.email : "huidromrudali@gmail.com";
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Anti-spam honeypot check: if filled, abort silently
+      if (honeyInput && honeyInput.value.trim() !== "") {
+        status.className = "contact-status is-success";
+        status.innerHTML = `<span class="status-icon">✓</span> Thank you! Your message has been received.`;
+        form.reset();
+        return;
+      }
+
+      const name = nameInput ? nameInput.value.trim() : "";
+      const email = emailInput ? emailInput.value.trim() : "";
+      const category = categorySelect ? categorySelect.value : "General Inquiry";
+      const message = messageInput ? messageInput.value.trim() : "";
+
+      // Client-side validation
+      if (!name || !email || !message) {
+        status.className = "contact-status is-error";
+        status.innerHTML = `<span class="status-icon">⚠️</span> Please fill in all required fields (Name, Email, and Message).`;
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        status.className = "contact-status is-error";
+        status.innerHTML = `<span class="status-icon">⚠️</span> Please enter a valid email address.`;
+        return;
+      }
+
+      // Enter loading state
+      submitBtn.disabled = true;
+      submitBtn.classList.add("is-loading");
+      submitBtn.innerHTML = `<span>Sending...</span><svg class="send-spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>`;
+      status.className = "contact-status is-loading";
+      status.innerHTML = `Sending your message via FormSubmit...`;
+
+      try {
+        const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            _subject: `[ɪreːn Website] ${category} from ${name}`,
+            category: category,
+            message: message,
+            _captcha: "false",
+            _template: "table"
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && (data.success === "true" || data.success === true)) {
+          status.className = "contact-status is-success";
+          status.innerHTML = `
+            <div class="status-success-card">
+              <span class="status-icon">✓</span>
+              <div>
+                <strong>Thank you, ${name}!</strong>
+                <p>Your message has been delivered to the ɪreːn team. We will respond to ${email} as soon as possible.</p>
+              </div>
+            </div>
+          `;
+          form.reset();
+        } else {
+          throw new Error(data.message || "Submission failed");
+        }
+      } catch (err) {
+        console.error("FormSubmit error:", err);
+        status.className = "contact-status is-error";
+        status.innerHTML = `<span class="status-icon">⚠️</span> Unable to send right now. Please check your connection or connect via GitHub.`;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("is-loading");
+        submitBtn.innerHTML = `<span>Send message</span><svg class="send-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`;
+      }
+    });
+  }
+
   // Site Configuration & Contact Info
   async function renderSiteConfig() {
     const site = await fetchJSON("data/site.json");
     if (!site) return;
 
     if (site.contact) {
-      const emailLink = document.getElementById("contact-email");
-      if (emailLink && site.contact.email) {
-        emailLink.href = `mailto:${site.contact.email}`;
-        emailLink.textContent = site.contact.email;
-      }
       const addressEl = document.getElementById("contact-address");
       if (addressEl && site.contact.address) {
         addressEl.textContent = site.contact.address;
@@ -1133,6 +1228,8 @@
         githubLink.href = site.contact.github;
       }
     }
+
+    initContactForm(site);
   }
 
   /* -------------------------------------------------------------

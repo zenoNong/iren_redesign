@@ -13,11 +13,11 @@
   "nav": [
     { "label": "About", "href": "#about" },
     { "label": "Objectives", "href": "#objectives" },
-    { "label": "People", "href": "#people" },
+    { "label": "Collaborators", "href": "#collaborators" },
     { "label": "Publications", "href": "#publications" },
     { "label": "Tools", "href": "#tools" },
     { "label": "News", "href": "#news" },
     { "label": "Gallery", "href": "#gallery" },
-    { "label": "Join us", "href": "#join" }
+    { "label": "Contact us", "href": "#contact" }
   ]
 }
