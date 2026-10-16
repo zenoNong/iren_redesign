@@ -880,15 +880,6 @@
       row.className = "news-row-card";
 
       const calIcon = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`;
-      const arrowIcon = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>`;
-
-      let linkUrl = "#";
-      let isExt = false;
-      if (item.link && item.link.url) {
-        linkUrl = item.link.url;
-        isExt = linkUrl !== "#" && !linkUrl.startsWith("#");
-      }
-      const targetAttr = isExt ? `target="_blank" rel="noopener noreferrer"` : "";
 
       row.innerHTML = `
         <div class="news-row-date">
@@ -897,11 +888,6 @@
         <div class="news-row-body">
           <h3 class="news-row-title">${item.title}</h3>
           <p class="news-row-summary">${item.summary}</p>
-        </div>
-        <div class="news-row-action">
-          <a class="news-readmore-btn" href="${linkUrl}" ${targetAttr}>
-            <span>Read more</span>${arrowIcon}
-          </a>
         </div>
       `;
 
