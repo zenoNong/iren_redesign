@@ -287,7 +287,7 @@
 
     const aboutCoalition = document.getElementById("about-coalition");
     if (aboutCoalition && data.about && data.about.coalition) {
-      const textElem = aboutCoalition.querySelector(".coalition-glass-text") || aboutCoalition;
+      const textElem = aboutCoalition.querySelector(".coalition-text") || aboutCoalition.querySelector(".coalition-glass-text") || aboutCoalition;
       textElem.innerHTML = `<strong><span class="iren-name">ɪreːn</span></strong> ${data.about.coalition.replace(/^ɪreːn\s*/, "")}`;
     }
   }
@@ -312,16 +312,13 @@
       objectivesContainer.replaceChildren();
       data.objectives.forEach((obj, idx) => {
         const li = document.createElement("li");
-        li.className = "objective-glass-card";
-        const num = obj.id || idx + 1;
+        li.className = "objective-card-item";
+        const num = String(obj.id || idx + 1).padStart(2, "0");
         li.innerHTML = `
-          <div class="obj-card-header">
-            <div class="obj-badge-glass" aria-hidden="true">${num}</div>
-            <span class="obj-roman">§ 0${num}</span>
-          </div>
-          <div class="obj-content">
+          <div class="obj-num" aria-hidden="true">${num}</div>
+          <div class="obj-body">
             <h4 class="obj-title">${obj.title}</h4>
-            <p class="obj-desc">${obj.description}</p>
+            <p class="obj-text">${obj.description}</p>
           </div>
         `;
         objectivesContainer.appendChild(li);
