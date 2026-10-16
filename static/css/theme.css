@@ -995,6 +995,26 @@ section#people .wrap {
   pointer-events: none;
 }
 
+/* 1-ROW TRACK (for Leadership & Past Members) */
+.people-track-1row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 12px 0 24px 0;
+}
+
+@media (max-width: 960px) {
+  .people-track-1row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .people-track-1row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* 2-ROW TRACK */
 .people-track-2row {
   display: grid;

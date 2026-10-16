@@ -340,24 +340,28 @@
         id: "leadership",
         title: "Leadership & Faculty Advisors",
         members: people.filter(p => p.group === "Lead and Coordinator" || p.group === "Faculty Advisors"),
+        rows: 1,
         canScroll: false
       },
       {
         id: "core-team",
         title: "Core Research Team",
         members: people.filter(p => p.group === "Research Team" && p.subgroup === "Core team"),
+        rows: 2,
         canScroll: false
       },
       {
         id: "researchers",
         title: "Researchers",
         members: people.filter(p => p.group === "Research Team" && p.subgroup === "Researchers"),
+        rows: 2,
         canScroll: true
       },
       {
-        id: "alumni",
-        title: "Alumni & Past Members",
-        members: people.filter(p => p.group === "Past members"),
+        id: "past-members",
+        title: "Past Members",
+        members: people.filter(p => p.group === "Past members" || p.role === "Past member" || p.role === "Alumni"),
+        rows: 1,
         canScroll: false
       }
     ];
@@ -370,7 +374,7 @@
       <button class="seg-btn" data-target="leadership">Leadership & Advisors</button>
       <button class="seg-btn" data-target="core-team">Core Team</button>
       <button class="seg-btn" data-target="researchers">Researchers</button>
-      <button class="seg-btn" data-target="alumni">Alumni</button>
+      <button class="seg-btn" data-target="past-members">Past Members</button>
     `;
     container.appendChild(segControl);
 
@@ -408,9 +412,9 @@
 
       groupSection.appendChild(header);
 
-      // 2-row track
+      // 1-row or 2-row track based on group configuration
       const track = document.createElement("div");
-      track.className = "people-track-2row";
+      track.className = g.rows === 1 ? "people-track-1row" : "people-track-2row";
 
       g.members.forEach(person => {
         track.appendChild(createPersonCard(person));
