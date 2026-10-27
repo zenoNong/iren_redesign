@@ -139,6 +139,39 @@ header.site .wrap {
   gap: 10px;
 }
 
+.brand-tagline {
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  color: var(--ink-soft);
+  padding-left: 10px;
+  border-left: 1px solid var(--line);
+  line-height: 1.25;
+  white-space: nowrap;
+  max-width: 440px;
+  opacity: 0.88;
+  display: inline-block;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+header.site.scrolled .brand-tagline {
+  opacity: 0;
+  max-width: 0;
+  padding-left: 0;
+  border-color: transparent;
+  pointer-events: none;
+}
+
+@media (max-width: 1100px) {
+  .brand-tagline {
+    display: none !important;
+  }
+}
+
 .brand-mark {
   width: 34px;
   height: 26px;
